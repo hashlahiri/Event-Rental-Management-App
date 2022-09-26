@@ -1,0 +1,242 @@
+2022-09-20 10:55:27.084  INFO 4024 --- [restartedMain] c.e.r.RentalManagementApplication        : Starting RentalManagementApplication using Java 17.0.1 on Jarvis with PID 4024 (C:\Users\hello\Documents\rentalManagement\rentalManagement\bin\main started by hello in C:\Users\hello\Documents\rentalManagement\rentalManagement)
+2022-09-20 10:55:27.091  INFO 4024 --- [restartedMain] c.e.r.RentalManagementApplication        : No active profile set, falling back to 1 default profile: "default"
+2022-09-20 10:55:27.173  INFO 4024 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-20 10:55:27.173  INFO 4024 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-20 10:55:29.059  INFO 4024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-20 10:55:29.223  INFO 4024 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 12 JPA repository interfaces.
+2022-09-20 10:55:30.162  INFO 4024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-09-20 10:55:30.176  INFO 4024 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-20 10:55:30.176  INFO 4024 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-20 10:55:30.286  INFO 4024 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-20 10:55:30.286  INFO 4024 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3112 ms
+2022-09-20 10:55:30.528  INFO 4024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-20 10:55:31.053  INFO 4024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-20 10:55:31.179  INFO 4024 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-20 10:55:31.281  INFO 4024 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-20 10:55:31.612  INFO 4024 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-20 10:55:31.796  INFO 4024 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-20 10:55:32.904  INFO 4024 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-20 10:55:32.915  INFO 4024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 10:55:33.511  WARN 4024 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-20 10:55:34.877  INFO 4024 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-20 10:55:34.981  INFO 4024 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@88d7550, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41ccba1d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f03f343, org.springframework.security.web.header.HeaderWriterFilter@26d3f36a, org.springframework.web.filter.CorsFilter@7f0d617c, org.springframework.security.web.authentication.logout.LogoutFilter@193f4494, com.event.rentalManagement.configuration.JwtRequestFilter@2f529c64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cd204a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a76f241, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20f50215, org.springframework.security.web.session.SessionManagementFilter@6d238f00, org.springframework.security.web.access.ExceptionTranslationFilter@59d3b8fe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21395e7a]
+2022-09-20 10:55:35.064  INFO 4024 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-20 10:55:35.252  INFO 4024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-09-20 10:55:35.253  INFO 4024 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-20 10:55:35.273  INFO 4024 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-20 10:55:35.299  INFO 4024 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-20 10:55:35.655  INFO 4024 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCustomerOrdersByListControllerUsingGET_1
+2022-09-20 10:55:35.796  INFO 4024 --- [restartedMain] c.e.r.RentalManagementApplication        : Started RentalManagementApplication in 9.291 seconds (JVM running for 10.724)
+2022-09-20 10:56:47.672  INFO 4024 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-20 10:56:47.672  INFO 4024 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-20 10:56:47.674  INFO 4024 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-20 10:56:53.184  INFO 4024 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 10:56:53.185  INFO 4024 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 10:56:53.209  INFO 4024 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 10:56:53.210  INFO 4024 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 10:58:41.835  INFO 4024 --- [http-nio-9090-exec-2] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 10:58:41.837  INFO 4024 --- [http-nio-9090-exec-2] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 10:58:49.913  INFO 4024 --- [http-nio-9090-exec-3] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 10:58:49.916  INFO 4024 --- [http-nio-9090-exec-3] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 10:59:15.614  INFO 4024 --- [http-nio-9090-exec-4] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 10:59:15.615  INFO 4024 --- [http-nio-9090-exec-4] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 10:59:27.685  INFO 4024 --- [http-nio-9090-exec-7] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletterPaged function called
+2022-09-20 10:59:33.370  INFO 4024 --- [http-nio-9090-exec-10] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 10:59:33.371  INFO 4024 --- [http-nio-9090-exec-10] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 10:59:42.150  INFO 4024 --- [http-nio-9090-exec-1] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 10:59:42.151  INFO 4024 --- [http-nio-9090-exec-1] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 11:01:05.682  INFO 4024 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-09-20 11:01:05.729  INFO 4024 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 11:01:05.735  INFO 4024 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-20 11:01:05.745  INFO 4024 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-20 11:32:11.919  INFO 4452 --- [restartedMain] c.e.r.RentalManagementApplication        : Starting RentalManagementApplication using Java 17.0.1 on Jarvis with PID 4452 (C:\Users\hello\Documents\rentalManagement\rentalManagement\bin\main started by hello in C:\Users\hello\Documents\rentalManagement\rentalManagement)
+2022-09-20 11:32:11.921  INFO 4452 --- [restartedMain] c.e.r.RentalManagementApplication        : No active profile set, falling back to 1 default profile: "default"
+2022-09-20 11:32:12.009  INFO 4452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-20 11:32:12.009  INFO 4452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-20 11:32:14.565  INFO 4452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-20 11:32:14.795  INFO 4452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 12 JPA repository interfaces.
+2022-09-20 11:32:16.061  INFO 4452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-09-20 11:32:16.086  INFO 4452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-20 11:32:16.087  INFO 4452 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-20 11:32:16.259  INFO 4452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-20 11:32:16.260  INFO 4452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4250 ms
+2022-09-20 11:32:16.595  INFO 4452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-20 11:32:17.226  INFO 4452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-20 11:32:17.338  INFO 4452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-20 11:32:17.480  INFO 4452 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-20 11:32:17.909  INFO 4452 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-20 11:32:18.171  INFO 4452 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-20 11:32:19.689  INFO 4452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-20 11:32:19.706  INFO 4452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 11:32:20.483  WARN 4452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-20 11:32:22.921  INFO 4452 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-20 11:32:23.157  INFO 4452 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52c1a56b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dd5be35, org.springframework.security.web.context.SecurityContextPersistenceFilter@6fbae084, org.springframework.security.web.header.HeaderWriterFilter@4363a0e8, org.springframework.web.filter.CorsFilter@4d4b21a0, org.springframework.security.web.authentication.logout.LogoutFilter@7e73347d, com.event.rentalManagement.configuration.JwtRequestFilter@34d6a2b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@468cfdfc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d1b2edb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38ab7027, org.springframework.security.web.session.SessionManagementFilter@2aa8209a, org.springframework.security.web.access.ExceptionTranslationFilter@20311f10, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@297814c]
+2022-09-20 11:32:23.315  INFO 4452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-20 11:32:23.623  INFO 4452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-09-20 11:32:23.624  INFO 4452 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-20 11:32:23.658  INFO 4452 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-20 11:32:23.709  INFO 4452 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-20 11:32:24.478  INFO 4452 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCustomerOrdersByListControllerUsingGET_1
+2022-09-20 11:32:24.761  INFO 4452 --- [restartedMain] c.e.r.RentalManagementApplication        : Started RentalManagementApplication in 13.622 seconds (JVM running for 18.902)
+2022-09-20 11:33:45.563  INFO 4452 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-20 11:33:45.564  INFO 4452 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-20 11:33:45.566  INFO 4452 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-20 11:33:46.371  INFO 4452 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:33:46.373  INFO 4452 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:33:46.421  INFO 4452 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 11:33:46.422  INFO 4452 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 11:33:49.040  INFO 4452 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 11:33:49.039  INFO 4452 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:33:49.042  INFO 4452 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:33:49.041  INFO 4452 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 11:34:30.723  INFO 4452 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:34:30.724  INFO 4452 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:34:32.477  INFO 4452 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:34:32.478  INFO 4452 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:34:32.479  INFO 4452 --- [http-nio-9090-exec-7] c.e.r.r.c.CountryRepositoryImpl          : findAllCountries function called
+2022-09-20 11:35:12.629  INFO 4452 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:35:12.630  INFO 4452 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 11:35:12.630  INFO 4452 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:35:12.630  INFO 4452 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 11:35:18.789  INFO 4452 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:35:18.790  INFO 4452 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:35:18.798  INFO 4452 --- [http-nio-9090-exec-9] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 11:35:34.900  INFO 4452 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 11:35:34.901  INFO 4452 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 11:35:34.921  INFO 4452 --- [http-nio-9090-exec-2] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 11:35:44.667  INFO 4452 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-09-20 11:35:44.732  INFO 4452 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 11:35:44.739  INFO 4452 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-20 11:35:44.753  INFO 4452 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-20 12:06:41.326  INFO 4472 --- [restartedMain] c.e.r.RentalManagementApplication        : Starting RentalManagementApplication using Java 17.0.1 on Jarvis with PID 4472 (C:\Users\hello\Documents\rentalManagement\rentalManagement\bin\main started by hello in C:\Users\hello\Documents\rentalManagement\rentalManagement)
+2022-09-20 12:06:41.328  INFO 4472 --- [restartedMain] c.e.r.RentalManagementApplication        : No active profile set, falling back to 1 default profile: "default"
+2022-09-20 12:06:41.420  INFO 4472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-20 12:06:41.421  INFO 4472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-20 12:06:43.055  INFO 4472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-20 12:06:43.265  INFO 4472 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196 ms. Found 12 JPA repository interfaces.
+2022-09-20 12:06:44.444  INFO 4472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-09-20 12:06:44.459  INFO 4472 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-20 12:06:44.460  INFO 4472 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-20 12:06:44.625  INFO 4472 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-20 12:06:44.626  INFO 4472 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3204 ms
+2022-09-20 12:06:44.937  INFO 4472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-20 12:06:45.537  INFO 4472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-20 12:06:45.638  INFO 4472 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-20 12:06:45.750  INFO 4472 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-20 12:06:46.088  INFO 4472 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-20 12:06:46.281  INFO 4472 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-20 12:06:47.593  INFO 4472 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-20 12:06:47.608  INFO 4472 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 12:06:48.346  WARN 4472 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-20 12:06:50.726  INFO 4472 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-20 12:06:50.938  INFO 4472 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cb91628, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29e3900, org.springframework.security.web.context.SecurityContextPersistenceFilter@512122a3, org.springframework.security.web.header.HeaderWriterFilter@23f442ee, org.springframework.web.filter.CorsFilter@ec7efa8, org.springframework.security.web.authentication.logout.LogoutFilter@69d70fd2, com.event.rentalManagement.configuration.JwtRequestFilter@1387d38c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50207f1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12923b7c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@730cf0a6, org.springframework.security.web.session.SessionManagementFilter@10c494b1, org.springframework.security.web.access.ExceptionTranslationFilter@77d04385, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c16e69]
+2022-09-20 12:06:51.089  INFO 4472 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-20 12:06:51.381  INFO 4472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-09-20 12:06:51.383  INFO 4472 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-20 12:06:51.415  INFO 4472 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-20 12:06:51.467  INFO 4472 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-20 12:06:52.208  INFO 4472 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCustomerOrdersByListControllerUsingGET_1
+2022-09-20 12:06:52.485  INFO 4472 --- [restartedMain] c.e.r.RentalManagementApplication        : Started RentalManagementApplication in 11.974 seconds (JVM running for 13.741)
+2022-09-20 12:08:13.485  INFO 4472 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-20 12:08:13.486  INFO 4472 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-20 12:08:13.490  INFO 4472 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-09-20 12:24:52.323  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:24:52.324  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:24:52.354  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:24:52.354  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:35:38.658  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.n.NewsletterRepositoryImpl       : insertNewsletter function called
+2022-09-20 12:37:11.350  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:11.350  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:11.361  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:11.362  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:14.421  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:14.421  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:14.427  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:14.427  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:15.699  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:15.700  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:17.532  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:17.532  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:18.793  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:18.794  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:20.714  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:20.715  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:21.812  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:21.813  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:25.375  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:25.375  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:25.383  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductRepositoryImpl          : findProductByProductId function called
+2022-09-20 12:37:25.383  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductRepositoryImpl          : Function called to find product by product id
+2022-09-20 12:37:28.349  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:28.350  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:28.350  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:28.351  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:36.358  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:36.358  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:36.388  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductRepositoryImpl          : findAllBySearchingByName function called
+2022-09-20 12:37:36.388  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all search results by name
+2022-09-20 12:37:53.669  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:53.670  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:37:53.670  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:53.670  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:37:55.350  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:37:55.350  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:37:55.351  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductRepositoryImpl          : findProductByProductId function called
+2022-09-20 12:37:55.351  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductRepositoryImpl          : Function called to find product by product id
+2022-09-20 12:38:21.301  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:38:21.300  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:38:21.301  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:38:21.301  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:38:31.496  INFO 4472 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:38:31.497  INFO 4472 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:38:31.511  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:38:31.511  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:38:51.589  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:38:51.590  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:39:00.496  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:39:00.496  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:39:00.504  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:39:00.505  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:39:06.593  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:39:06.594  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:39:09.801  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:39:09.802  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:39:09.807  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.c.CountryRepositoryImpl          : findAllCountries function called
+2022-09-20 12:40:27.454  INFO 4472 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:40:27.455  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductRepositoryImpl          : findAllProductsByCategoryId function called
+2022-09-20 12:40:27.455  INFO 4472 --- [http-nio-9090-exec-6] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:40:27.455  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductRepositoryImpl          : Function called to retrieve all products by category Id
+2022-09-20 12:40:35.166  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:40:35.168  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:40:35.171  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 12:42:18.942  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:18.943  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 12:42:18.943  INFO 4472 --- [http-nio-9090-exec-4] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:42:28.837  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:28.838  INFO 4472 --- [http-nio-9090-exec-5] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:42:28.838  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 12:42:32.263  INFO 4472 --- [http-nio-9090-exec-6] c.e.r.r.o.OrderRepositoryImpl            : getCustomerOrdersByList function called
+2022-09-20 12:42:37.481  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:37.482  INFO 4472 --- [http-nio-9090-exec-10] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:42:45.827  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:45.828  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:42:52.862  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:52.863  INFO 4472 --- [http-nio-9090-exec-3] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:42:56.868  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : findAllProductCategory function called
+2022-09-20 12:42:56.869  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.p.ProductCategoryRepositoryImpl  : Find all newsletter api was hit to retrieve all product category as list
+2022-09-20 12:43:58.410  INFO 4472 --- [http-nio-9090-exec-9] c.e.r.r.c.ContactAdminRepositoryImpl     : getAllContactAdmin searched for entries
+2022-09-20 12:44:03.927  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.c.ContactUsRepositoryImpl        : getAllContactUs function called
+2022-09-20 12:44:08.069  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 12:44:08.070  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 12:45:31.722  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.o.OrderRepositoryImpl            : getOrdersFromToday function called
+2022-09-20 12:45:54.464  INFO 4472 --- [http-nio-9090-exec-7] c.e.r.r.o.OrderRepositoryImpl            : getOrderByCustomerEmail function called
+2022-09-20 12:46:05.092  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 12:46:05.092  INFO 4472 --- [http-nio-9090-exec-8] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 12:46:35.019  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletter function called
+2022-09-20 12:46:35.020  INFO 4472 --- [http-nio-9090-exec-1] c.e.r.r.n.NewsletterRepositoryImpl       : Get all newsletter api was hit to retrieve all newsletters as list
+2022-09-20 12:47:02.098  INFO 4472 --- [http-nio-9090-exec-2] c.e.r.r.n.NewsletterRepositoryImpl       : getAllNewsletterByNewsletterEmailAndNewsletterRequestStatusList function called
+2022-09-20 13:51:49.435  WARN 4472 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m3s170ms84µs).
+2022-09-20 13:51:51.186  INFO 4472 --- [RMI TCP Connection(46)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-09-20 13:51:51.240  INFO 4472 --- [RMI TCP Connection(46)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-20 13:51:51.244  INFO 4472 --- [RMI TCP Connection(46)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-20 13:51:51.249  INFO 4472 --- [RMI TCP Connection(46)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
