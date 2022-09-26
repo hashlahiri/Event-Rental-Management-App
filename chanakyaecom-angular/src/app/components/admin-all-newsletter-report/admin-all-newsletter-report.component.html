@@ -1,0 +1,68 @@
+<div class="receipt-content">
+    <div class="container bootstrap snippets bootdey">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="invoice-wrapper">
+					<div class="intro">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <img src="../../../assets/images/logo.png" height="100px" width="100px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>Generation Date/Time: </span>
+								    <strong>{{dateTime}}</strong><br />
+								    <strong>
+									    Mr. Nareshlal Ganjilal Jaiswal
+								    </strong>
+								    <p>
+									    House no.12 <br>
+									    Datta Bardi Road, at post Azad Chowk Hadgaon<br>
+									    Hadgaon, Nanded <br>
+									    INDIA <br>
+									    <a href="#">
+										    admin@omdecorators.com
+									    </a>
+								    </p>
+                                </td>
+                            </tr>
+                        </table>
+					</div>
+
+					<div class="line-items">
+						<div class="items">
+							<table class="table">
+                                <tr>
+                                    <td>Newsletter Email</td>
+                                    <td>Newsletter Request Date</td>
+                                    <td>Newsletter Request Status</td>
+                                </tr>
+                                <tr *ngFor=" let tempNewsletterRecord of newsletterList">
+                                    <td scope="row"><b>{{ tempNewsletterRecord.newsletterEmail }}</b></td>
+                                    <td scope="row">{{ tempNewsletterRecord.newsletterDateCreated | date:'medium'}}</td>
+                                    <td scope="row"><b>{{ tempNewsletterRecord.newsletterRequestStatus }}</b></td>
+                                </tr>
+                            </table>
+						</div>
+						<div class="print">
+							<a (click)="onBackClick()">
+								<i class="fa fa-arrow-left"></i>
+								Back
+							</a>
+							<a onclick="window.print()">
+								<i class="fa fa-print"></i>
+								Print
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer">
+					Copyright © 2022. Om Decorators & DJ Pvt. Ltd.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>                    

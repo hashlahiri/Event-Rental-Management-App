@@ -1,0 +1,71 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    Container wrapper
+    <div class="container-fluid">
+  
+       Collapsible wrapper -->
+      <!-- <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+        <img src="../../../assets/images/logo.png" height="100px" width="100px" routerLink="/home" />
+         Left links -->
+        <!-- <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/admin" *ngIf="userService.roleMatch(['Admin'])">Admin Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/user" *ngIf="userService.roleMatch(['User'])">User Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/careers">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/contactUs">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/ourPolicy">Our Policy</a>
+          </li>
+        </ul> -->
+        <!-- <button *ngIf="! isLoggedIn()" type="button" class="btn btn-outline-success" routerLink="/login">Login</button>
+        <button *ngIf="isLoggedIn()" type="button" class="btn btn-outline-danger" (click)="logout()">Logout</button> -->
+        <!-- Left links -->
+      <!-- </div> -->
+      <!-- Collapsible wrapper -->
+    <!-- </div> -->
+    <!-- Container wrapper -->
+  <!-- </nav> -->
+
+
+  <div class="menu-sidebar-content js-scrollbar1 bg-dark">
+    <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list text-light">
+
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/admin" *ngIf="userService.roleMatch(['Admin'])">Welcome...</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminOrders" *ngIf="userService.roleMatch(['Admin'])">Orders</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminUsers" *ngIf="userService.roleMatch(['Admin'])">Users</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminCustomRequests" *ngIf="userService.roleMatch(['Admin'])">Custom Requests</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminViewerContact" *ngIf="userService.roleMatch(['Admin'])">Viewer Contacts</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminNewsletter" *ngIf="userService.roleMatch(['Admin'])">Newsletters</a>
+            </li>
+            <li>
+              <a class="nav-link text-light" aria-current="page" routerLink="/adminReports" *ngIf="userService.roleMatch(['Admin'])">Order Reports</a>
+            </li>
+            <hr />
+            <li>
+              <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
+            </li>
+            
+        </ul>
+    </nav>
+</div>

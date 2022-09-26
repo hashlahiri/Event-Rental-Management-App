@@ -1,0 +1,165 @@
+<div class="page-wrapper">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="eventRentalManagement" class="img-responsive" />
+            </a>
+        </div>
+
+        <app-admin-header></app-admin-header>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+    <div class="page-container">
+        <div class="container mt-4">
+            <div class="card text-left" style="color: green; padding: 9px;">
+                <h1 class="display-4">Welcome Mr. Jaiswal</h1>
+                <hr />
+                <table class="container table table-dark">
+                    <thead>
+                        <tr>
+                            <th class="col-sm-4">Information</th>
+                            <td class="col-sm-8">Details</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="col-sm-4">Username: </th>
+                            <td class="col-sm-8">{{user}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-4">Email: </th>
+                            <td class="col-sm-8">{{userInfo.userEmail}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-4">Name: </th>
+                            <td class="col-sm-8">{{userInfo.userFirstName | titlecase}} {{userInfo.userLastName |
+                                titlecase}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-4">Phone Number: </th>
+                            <td class="col-sm-8">{{userInfo.userPhoneNumber}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-4">Address: </th>
+                            <td class="col-sm-8">{{userInfo.userAddress}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-sm-4">Date of Birth: </th>
+                            <td class="col-sm-8">{{userInfo.userDob}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h2 class="display-5">Update Admin Profile Information</h2>
+                <span class="lead"><em>update policy: you have to verify all the fields</em></span>
+                <hr />
+                <!--UPDATE FORM SECTION START-->
+                <div class="container">
+                <form [formGroup]="updateAdminFormGroup" #updateAdminEntireData="ngForm" (ngSubmit)="onSubmit(updateAdminEntireData.value)">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email*</label>
+                            <input formControlName="updateAdminEmail" type="email" class="form-control" id="inputEmail4" name="userEmail"
+                                value="{{userInfo.userEmail}}" ngModel disabled>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="phoneNo">Phone Number*</label>
+                            <input formControlName="updateAdminNumber" type="text" class="form-control" id="phonenumber" name="userPhoneNumber"
+                                value="{{userInfo.userPhoneNumber}}" ngModel required>
+
+                            <div *ngIf="updateAdminNumber.invalid && (updateAdminNumber.dirty || updateAdminNumber.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="updateAdminNumber.errors.required || updateAdminNumber.errors.notOnlyWhiteSpace">
+                                    NUMBER CANNOT BE EMPTY OR ONLY WHITESPACE
+                                </div>
+                                <div *ngIf="updateAdminNumber.errors.minlength || updateAdminNumber.errors.maxlength">
+                                    INVALID NUMBER FORMAT
+                                </div>
+                                <div *ngIf="updateAdminNumber.errors.pattern">
+                                    INVALID NUMBER FORMAT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstname">Firstname*</label>
+                            <input formControlName="updateAdminFirstname" type="text" class="form-control" id="inputEmail4" name="userFirstName"
+                                value="{{userInfo.userFirstName | titlecase}}" ngModel required>
+                            <div *ngIf="updateAdminFirstname.invalid && (updateAdminFirstname.dirty || updateAdminFirstname.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="updateAdminFirstname.errors.required || updateAdminFirstname.errors.notOnlyWhiteSpace">
+                                    FIRSTNAME CANNOT HAVE ONLY WHITESPACE
+                                </div>
+                                <div *ngIf="updateAdminFirstname.errors.minlength">
+                                    FIRSTNAME BELOW MINIMUM LENGTH
+                                </div>
+                                <div *ngIf="updateAdminFirstname.errors.maxlength">
+                                    FIRSTNAME ABOVE MAXIMUM LENGTH
+                                </div>
+                                <div *ngIf="updateAdminFirstname.errors.pattern">
+                                    INVALID FIRSTNAME FORMAT
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastname">Lastname*</label>
+                            <input formControlName="updateAdminLastname" type="email" class="form-control" id="inputEmail4" name="userLastName"
+                                value="{{userInfo.userLastName | titlecase}}" ngModel required>
+                            
+                            <div *ngIf="updateAdminLastname.invalid && (updateAdminLastname.dirty || updateAdminLastname.touched)"
+                                class="alert alert-danger mt-1">
+                                <div *ngIf="updateAdminLastname.errors.required || updateAdminLastname.errors.notOnlyWhitespace">
+                                   LASTNAME CANNOT HAVE ONLY WHITESPACE
+                                </div>
+                                <div *ngIf="updateAdminLastname.errors.minlength">
+                                   LASTNAME BELOW MINIMUM LENGTH
+                                </div>
+                                <div *ngIf="updateAdminLastname.errors.maxlength">
+                                   LASTNAME ABOVE MAXIMUM LENGTH
+                                </div>
+                                <div *ngIf="updateAdminLastname.errors.pattern">
+                                   INVALID LASTNAME FORMAT
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputAddress">Address*</label>
+                            <input formControlName="updateAdminAddress" type="text" class="form-control" id="inputAddress" name="userAddress"
+                                value="{{userInfo.userAddress}}" ngModel required>
+
+                                <div *ngIf="updateAdminAddress.invalid && (updateAdminAddress.dirty || updateAdminAddress.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="updateAdminAddress.errors.required || updateAdminAddress.errors.notOnlyWhiteSpace">
+                                        ADDRESS CANNOT BE EMPTY OR ONLY WHITESPACE
+                                    </div>
+                                    <div *ngIf="updateAdminAddress.errors.minlength">
+                                        ADDRESS BELOW MINIMUM LENGTH
+                                    </div>
+                                    <div *ngIf="updateAdminAddress.errors.maxlength">
+                                        ADDRESS ABOVE MAXIMUM LENGTH
+                                    </div>  
+                                </div>  
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputDate">Date Of Birth*</label>
+                            <input formControlName="updateAdminDate" type="date" class="form-control" id="inputDate" name="userDob"
+                                value="{{userInfo.userDob | date: 'yyyy-MM-dd'}}" ngModel required>
+                            
+                                <div *ngIf="updateAdminDate.invalid && (updateAdminDate.dirty || updateAdminDate.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="updateAdminDate.errors.required || updateAdminDate.errors.notOnlyWhiteSpace">
+                                       Date of Birth of user cannot be empty
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" value="Click to update">
+                </form>
+                </div>
+                <!--UPDATE FORM SECTION END-->
+            </div>
+        </div>
+    </div>
+</div>

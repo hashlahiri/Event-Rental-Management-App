@@ -1,0 +1,111 @@
+<div class="receipt-content">
+    <div class="container bootstrap snippets bootdey">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="invoice-wrapper">
+					<div class="intro">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <img src="../../../assets/images/logo.png" height="100px" width="100px" />
+                                </td>
+                            </tr>
+                        </table>
+					</div>
+
+					<div class="payment-info">
+						<div class="row">
+							<div class="col-sm-6">
+								<span>Order Email: </span>
+								<strong>{{adminOrderRecord[0].customer.email}}</strong>
+							</div>
+							<div class="col-sm-6 text-right">
+								<span>Generation Date/Time: </span>
+								<strong>{{dateTime}}</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="payment-details">
+						<div class="row">
+							<div class="col-sm-6">
+								<strong>
+									{{adminOrderRecord[0].customer.firstName}} {{adminOrderRecord[0].customer.lastName}}
+								</strong>
+								<p>
+                                    {{adminOrderRecord[0].billingAddress.street}} <br>
+									{{adminOrderRecord[0].billingAddress.city}}, {{adminOrderRecord[0].billingAddress.state}} <br>
+									{{adminOrderRecord[0].billingAddress.zipCode}} <br>
+									{{adminOrderRecord[0].billingAddress.country}}
+								</p>
+							</div>
+							<div class="col-sm-6 text-right">
+								<span>Payment To</span>
+								<strong>
+									Mr. Nareshlal Ganjilal Jaiswal
+								</strong>
+								<p>
+									House no.12 <br>
+									Datta Bardi Road, at post Azad Chowk Hadgaon<br>
+									Hadgaon, Nanded <br>
+									INDIA <br>
+									<a href="#">
+										admin@omdecorators.com
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="line-items">
+						<div class="headers clearfix">
+							<div class="row">
+								<div class="col-xs-4">Orders (Description, Quantity, Amount)</div>
+							</div>
+						</div>
+						<div class="items">
+							<table class="table">
+                                <tr>
+                                    <td>Order Tracking Number</td>
+                                    <td>Total Item Quantity</td>
+                                    <td>Total Price</td>
+                                    <td>Order Date/Time</td>
+                                    <td>Order Status</td>
+                                    <td>Shipping Address</td>
+                                </tr>
+                                <tr *ngFor=" let tempOrderRecord of adminOrderRecord">
+                                    <td scope="row"><b>{{ tempOrderRecord.orderTrackingNumber }}</b></td>
+                                    <td scope="row">{{ tempOrderRecord.totalQuantity }}</td>
+                                    <td scope="row"><b>{{ tempOrderRecord.totalPrice | currency:'INR' }}</b></td>
+                                    <td scope="row">{{ tempOrderRecord.dateCreated | date:'medium'}}</td>
+                                    <td scope="row">{{ tempOrderRecord.status }}</td>
+                                    <td scope="row">
+                                      {{ 
+                                        tempOrderRecord.shippingAddress.state +", "+
+                                        tempOrderRecord.shippingAddress.city +", "+
+                                        tempOrderRecord.shippingAddress.street +", "+
+                                        tempOrderRecord.shippingAddress.zipCode
+                                      }}
+                                    </td>
+                                </tr>
+                            </table>
+						</div>
+						<div class="print">
+							<a (click)="onBackClick()">
+								<i class="fa fa-arrow-left"></i>
+								Back
+							</a>
+							<a onclick="window.print()">
+								<i class="fa fa-print"></i>
+								Print
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer">
+					Copyright © 2022. Om Decorators & DJ Pvt. Ltd.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>                    

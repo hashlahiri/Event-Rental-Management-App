@@ -1,0 +1,20 @@
+<header class="header-desktop">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div class="header-wrap">
+
+                <app-search></app-search>
+
+                <a class="btn-sm btn-transparent text-dark font-weight-bold pl-0 pr-0" routerLink="/Products">Packages</a>
+                <a class="btn-sm btn-transparent text-dark font-weight-bold pl-0 pr-0" routerLink="/user">User Dashboard</a>
+                <a class="btn-sm btn-transparent text-dark font-weight-bold pl-0 pr-0" routerLink="/contactAdmin">Contact Admin</a>
+                <button *ngIf="! isLoggedIn()" type="button" class="btn btn-outline-success" routerLink="/login">Login</button>
+                <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+
+                <app-cart-status></app-cart-status>
+
+            </div>
+            <div class="account-wrap"></div>
+        </div>
+    </div>
+</header>

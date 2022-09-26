@@ -1,0 +1,122 @@
+<app-header></app-header>
+<!--<div class="container mt-5">
+   <div class="card text-center" style="padding: 20px;">
+      <h1>This is Contact Us Page</h1>
+      <h3>To be designed later</h3>
+   </div>
+</div>
+-->
+
+<section class="get-in-touch">
+   <h1 class="title">Get in touch</h1>
+   <form [formGroup]="contactUsFormGroup" class="contact-form row" #contactUsEntireData = "ngForm" (ngSubmit) = "onSubmit(contactUsEntireData.value)">
+      <div class="form-field col-lg-6">
+         <input formControlName="contactUsName" id="name" class="input-text js-input" type="text" name="contactName" ngModel required>
+         <label class="label" for="name">Name</label>
+
+         <div *ngIf="contactUsName.invalid && (contactUsName.dirty || contactUsName.touched)" 
+            class="alert alert-danger mt-1">
+            <div *ngIf="contactUsName.errors.required || contactUsName.errors.notOnlyWhitespace">
+               NAME CANNOT BE EMPTY OF ONLY WHITESPACE
+            </div>
+            <div *ngIf="contactUsName.errors.minlength">
+               NAME BELOW MINIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsName.errors.maxlength">
+               NAME ABOVE MAXIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsName.errors.pattern">
+               INVALID NAME FORMAT
+            </div>
+         </div>
+      </div>
+      <div class="form-field col-lg-6 ">
+         <input formControlName="contactUsEmail" id="email" class="input-text js-input" type="email" name="contactEmail" ngModel required>
+         <label class="label" for="email">E-mail</label>
+
+         <div *ngIf="contactUsEmail.invalid && (contactUsEmail.dirty || contactUsEmail.touched)" 
+            class="alert alert-danger mt-1">
+            <div *ngIf="contactUsEmail.errors.required || contactUsEmail.errors.notOnlyWhitespace">
+               EMAIL CANNOT HAVE ONLY WHITESPACE
+            </div>
+            <div *ngIf="contactUsEmail.errors.minlength">
+               EMAIL BELOW MINIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsEmail.errors.maxlength">
+               EMAIL ABOVE MAXIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsEmail.errors.pattern">
+               INVALID EMAIL FORMAT
+            </div>
+
+         </div>
+      </div>
+      <div class="form-field col-lg-6 ">
+         <input formControlName= "contactUsPurpose" id="company" class="input-text js-input" type="text" name="contactPurpose" ngModel required>
+         <label class="label" for="company">Purpose</label>
+
+         <div *ngIf="contactUsPurpose.invalid && (contactUsPurpose.dirty || contactUsPurpose.touched)" 
+         class="alert alert-danger mt-4">
+            <div *ngIf="contactUsPurpose.errors.required || contactUsPurpose.errors.notOnlyWhitespace">
+               PURPOSE CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+            </div>
+            <div *ngIf="contactUsPurpose.errors.minlength">
+               PURPOSE BELOW MINIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsPurpose.errors.maxlength">
+               PURPOSE ABOVE MAXIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsPurpose.errors.pattern">
+               PURPOSE CANNOT CONTAIN SPECIAL CHARACTERS
+            </div>
+         </div>
+      </div>
+       <div class="form-field col-lg-6 ">
+         <input formControlName="contactUsPhoneNumber" id="phone" class="input-text js-input" type="text" name="contactPhone" ngModel required>
+         <label class="label" for="phone">Contact Number</label>
+
+         <div *ngIf="contactUsPhoneNumber.invalid && (contactUsPhoneNumber.dirty || contactUsPhoneNumber.touched)" class="alert alert-danger mt-4">
+            <div *ngIf="contactUsPhoneNumber.errors.required">
+               CONTACT CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+            </div>
+            <div *ngIf="contactUsPhoneNumber.errors.minlength">
+               INVALID NUMBER FORMAT
+            </div>
+            <div *ngIf="contactUsPhoneNumber.errors.maxlength">
+               INVALID NUMBER FORMAT
+            </div>
+            <div *ngIf="contactUsPhoneNumber.errors.pattern">
+               INVALID NUMBER FORMAT
+            </div>
+         </div>
+      </div>
+      <div  class="form-field col-lg-12">
+         <input formControlName="contactUsMessage" id="message" class="input-text js-input" type="text" name="contactMessage" ngModel required>
+         <label class="label" for="message">Message</label>
+
+         <div *ngIf="contactUsMessage.invalid && (contactUsMessage.dirty || contactUsMessage.touched)" class="alert alert-danger mt-1">
+            <div *ngIf="contactUsMessage.errors.required">
+               MESSAGE CANNOT BE EMPTY OR ONLY WHITESPACE
+            </div>
+            <div *ngIf="contactUsMessage.errors.minlength">
+               MESSAGE BELOW MINIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsMessage.errors.maxlength">
+               MESSAGE ABOVE MAXIMUM LENGTH
+            </div>
+            <div *ngIf="contactUsMessage.errors.pattern">
+               INVALID MESSAGE FORMAT
+            </div>
+         </div>
+      </div>
+      <div class="form-field col-lg-12">
+         <input class="submit-btn" type="submit" value="Submit">
+      </div>
+   </form>
+   <div><p class="lead">(<b>NOTE*: </b>Include correct <b>Information</b> otherwise request would be ignored)</p></div>
+</section>
+
+
+<!--FOOTER START-->
+<app-footer></app-footer>
+<!--FOOTER END-->

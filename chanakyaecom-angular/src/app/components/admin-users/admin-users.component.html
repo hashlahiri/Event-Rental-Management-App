@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="eventRentalManagement" class="img-responsive" />
+            </a>
+        </div>
+
+        <app-admin-header></app-admin-header>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+    <div class="page-container">
+        <div class="container mt-4">
+            <div class="card text-left" style="color: green; padding: 9px;">
+                <h1 class="display-4">Welcome Mr. Jaiswal</h1>
+                <hr />
+                <h5 class="h5">All Users <button type="button" class="btn btn-secondary" (click) = "onAllUsersReportGenerate()">Generate All Users Report</button></h5>
+                <hr />
+                <!--ALL USERS SECTION START-->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-light text-justified">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Username</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone no.</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Date of Birth</th>
+                                <th scope="col">Secret Pin</th>
+                                <th scope="col">Role</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor=" let tempUserRecord of usersInfoList">
+                                <td scope="row"><b>{{ tempUserRecord.userName }}</b></td>
+                                <td scope="row">{{ tempUserRecord.userFirstName +" "+ tempUserRecord.userLastName }}</td>
+                                <td scope="row">{{ tempUserRecord.userEmail }}</td>
+                                <td scope="row">{{ tempUserRecord.userPhoneNumber }}</td>
+                                <td scope="row">{{ tempUserRecord.userAddress }}</td>
+                                <td scope="row">{{ tempUserRecord.userDob }}</td>
+                                <td scope="row">{{ tempUserRecord.userSecretPin }}</td>
+                                <td scope="row">{{ tempUserRecord.role[0].roleName }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--ALL ORDERS SECTION END-->
+            </div>
+        </div>
+    </div>
+</div>

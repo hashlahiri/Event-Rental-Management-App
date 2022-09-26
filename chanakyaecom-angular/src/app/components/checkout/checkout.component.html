@@ -1,0 +1,555 @@
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
+            </a>
+        </div>
+
+        <app-product-category-menu></app-product-category-menu>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+
+                        <app-search></app-search>
+
+                        <app-cart-status></app-cart-status>
+
+                    </div>
+                    <div class="account-wrap"></div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="container section-content section-content-p30">
+                <div class="container-fluid">
+
+                    <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+                        <!-- customer form group -->
+                        <div formGroupName="customer" class="form-area">
+                            <h3>Customer</h3>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2">
+                                    <label>First Name*</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="firstName" type="text" value="{{userInfo.userFirstName | titlecase}}" disabled>
+                                        <!--
+                                        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                                            class="alert alert-danger mt-1">
+                                            
+                                            <div
+                                                *ngIf="firstName.errors.required || firstName.errors.notOnlyWhitespace">
+                                                FIRSTNAME CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+
+                                            <div *ngIf="firstName.errors.minlength">
+                                                FIRSTNAME BELOW MINIMUM LENGTH
+                                            </div>
+                                            
+                                            <div *ngIf="firstName.errors.maxlength">
+                                                FIRSTNAME ABOVE MAXIMUM LENGTH
+                                            </div>
+
+                                            <div *ngIf="firstName.errors.pattern">
+                                                INVALID FIRSTNAME FORMAT
+                                            </div>
+
+                                        </div>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2">
+                                    <label>Last Name*</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="lastName" type="text" value="{{ userInfo.userLastName | titlecase }}" disabled>
+                                        <!--
+                                        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+                                            class="alert alert-danger mt-1">
+
+                                            <div *ngIf="lastName.errors.required || lastName.errors.notOnlyWhitespace">
+                                                LASTNAME CANNOT HAVE ONLY WHITESPACE
+                                            </div>
+
+                                            <div *ngIf="lastName.errors.minlength">
+                                                LASTNAME BELOW MINIMUM LENGTH
+                                            </div>
+
+                                            <div *ngIf="lastName.errors.maxlength">
+                                                LASTNAME ABOVE MAXIMUM LENGTH
+                                            </div>
+
+                                            <div *ngIf="lastName.errors.pattern">
+                                                INVALID LASTNAME FORMAT
+                                            </div>
+                                        </div>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right  mt-2">
+                                    <label>Email*</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="email" type="text" value="{{ userInfo.userEmail }}" disabled>
+                                        <!--
+                                        <div *ngIf="email.invalid && (email.dirty || lastName.touched)"
+                                            class="alert alert-danger mt-1">
+
+                                            <div *ngIf="email.errors.required">
+                                                EMAIL CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+
+                                            <div *ngIf="email.errors.pattern">
+                                                INVALID EMAIL FORMAT
+                                            </div>
+
+                                        </div>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- shipping Address -->
+                        <div formGroupName="shippingAddress" class="form-area">
+                            <h3>Shipping Address*</h3>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Country</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="country" (change)="getStates('shippingAddress')">
+                                            <option *ngFor="let country of countries" [ngValue]="country">
+                                                {{ country.name }}
+                                            </option>
+                                        </select>
+
+                                        <div *ngIf="shippingAddressCountry.invalid && (shippingAddressCountry.dirty || shippingAddressCountry.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="shippingAddressCountry.errors.required">
+                                                COUNTRY CANNOT BE EMPTY OR HAVE ONLY WHITESPACES
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Street*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="street" type="text">
+
+                                        <div *ngIf="shippingAddressStreet.invalid && (shippingAddressStreet.dirty || shippingAddressStreet.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="shippingAddressStreet.errors.required || shippingAddressStreet.errors.notOnlyWhitespace">
+                                                STREET CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="shippingAddressStreet.errors.minlength">
+                                                STREET BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressStreet.errors.maxlength">
+                                                STREET ABOVE MAXIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressStreet.errors.pattern">
+                                                INVALID STREET FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right"> <label>City*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="city" type="text">
+
+                                        <div *ngIf="shippingAddressCity.invalid && (shippingAddressCity.dirty || shippingAddressCity.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="shippingAddressCity.errors.required || shippingAddressCity.errors.notOnlyWhitespace">
+                                                CITY CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="shippingAddressCity.errors.minlength">
+                                                CITY BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressCity.errors.maxLength">
+                                                CITY ABOVE MAXIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressCity.errors.pattern">
+                                                INVALID ADDRESS FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>State*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="state">
+                                            <option *ngFor="let state of shippingAddressStates" [ngValue]="state">
+                                                {{ state.name }}
+                                            </option>
+                                        </select>
+
+                                        <div *ngIf="shippingAddressState.invalid && (shippingAddressState.dirty || shippingAddressState.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="shippingAddressState.errors.required">
+                                                STATE CANNOT BE NULL OR HAVE ONLY WHITESPACE 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Pin Code*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="pinCode" type="text">
+
+                                        <div *ngIf="shippingAddressPinCode.invalid && (shippingAddressPinCode.dirty || shippingAddressPinCode.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="shippingAddressPinCode.errors.required || shippingAddressPinCode.errors.notOnlyWhitespace">
+                                                PINCODE CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="shippingAddressPinCode.errors.minlength">
+                                                PINCODE BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressPinCode.errors.maxlength">
+                                                PINCODE ABOVE MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="shippingAddressPinCode.errors.pattern">
+                                                INVALID PINCODE FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Add check box to copy shipping to billing -->
+                        <div class="input-space">
+                            <label class="au-checkbox">
+                                <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)">
+                                <span class="au-checkmark"></span>
+                                <p>Billing Address same as Shipping Address</p>
+                            </label>
+                        </div>
+
+
+                        <!-- Billing Address -->
+                        <div formGroupName="billingAddress" class="form-area">
+                            <h3>Billing Address</h3>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Country*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="country" (change)="getStates('billingAddress')">
+                                            <option *ngFor="let country of countries" [ngValue]="country">
+                                                {{ country.name }}
+                                            </option>
+                                        </select>
+
+                                        <div *ngIf="billingAddressCountry.invalid && (billingAddressCountry.dirty || billingAddressCountry.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="billingAddressCountry.errors.required">
+                                                COUNTRY CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Street*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="street" type="text">
+
+                                        <div *ngIf="billingAddressStreet.invalid && (billingAddressStreet.dirty || billingAddressStreet.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="billingAddressStreet.errors.required || billingAddressStreet.errors.notOnlyWhitespace">
+                                                STREET CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="billingAddressStreet.errors.minlength">
+                                                STREET BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressStreet.errors.maxLength">
+                                                STREET ABOVE MAXIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressStreet.errors.pattern">
+                                                INVALID STREET FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>City*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="city" type="text">
+
+                                        <div *ngIf="billingAddressCity.invalid && (billingAddressCity.dirty || billingAddressCity.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="billingAddressCity.errors.required || billingAddressCity.errors.notOnlyWhitespace">
+                                                CITY CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="billingAddressCity.errors.minlength">
+                                                CITY BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressCity.errors.maxLength">
+                                                CITY ABOVE MAXIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressCity.errors.pattern">
+                                                INVALID STREET FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>State*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="state">
+                                            <option *ngFor="let state of billingAddressStates" [ngValue]="state">
+                                                {{ state.name }}
+                                            </option>
+                                        </select>
+
+                                        <div *ngIf="billingAddressState.invalid && (billingAddressState.dirty || billingAddressState.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="billingAddressState.errors.required">
+                                                STATE CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Pin Code*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="pinCode" type="text">
+
+                                        <div *ngIf="billingAddressPinCode.invalid && (billingAddressPinCode.dirty || billingAddressPinCode.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="billingAddressPinCode.errors.required || billingAddressPinCode.errors.notOnlyWhitespace">
+                                                PINCODE CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+
+                                            <div *ngIf="billingAddressPinCode.errors.minlength">
+                                                PINCODE BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressPinCode.errors.maxLength">
+                                                PINCODE ABOVE MAXIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="billingAddressPinCode.errors.pattern">
+                                                INVALID PINCODE FORMAT
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Credit Card -->
+                        <div formGroupName="creditCard" class="form-area">
+                            <h3>Credit / Debit Card</h3>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Card Type*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="cardType">
+                                            <option>Visa</option>
+                                            <option>Mastercard</option>
+                                        </select>
+
+                                        <div *ngIf="creditCardType.invalid && (creditCardType.dirty || creditCardType.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="creditCardType.errors.required">
+                                                CARD CANNOT BE EMPTY OR ONLY HAVE WHITESPACE
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Name on Card*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="nameOnCard" type="text">
+
+                                        <div *ngIf="creditCardNameOnCard.invalid && (creditCardNameOnCard.dirty || creditCardNameOnCard.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div
+                                                *ngIf="creditCardNameOnCard.errors.required || creditCardNameOnCard.errors.notOnlyWhitespace">
+                                                NAME CANNOT BE EMPTY OR ONLY HAVE WHITESPACE
+                                            </div>
+
+                                            <div *ngIf="creditCardNameOnCard.errors.minlength">
+                                                NAME BELOW MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="creditCardNameOnCard.errors.maxlength">
+                                                NAME ABOVE MINIMUM LENGTH
+                                            </div>
+                                            <div *ngIf="creditCardNameOnCard.errors.pattern">
+                                                INVALID NAME FORMAT
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Card Number*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="cardNumber" type="text">
+
+                                        <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="creditCardNumber.errors.required || creditCardNumber.errors.notOnlyWhitespace">
+                                                CARD NUMBER CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="creditCardNumber.errors.pattern">
+                                                CARD NUMBER MUST BE 16 DIGITS LONG, INVALID CARD NUMBER FORMAT
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Security Code (CCV)*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <input formControlName="securityCode" type="text">
+
+                                        <div *ngIf="creditCardSecurityCode.invalid && (creditCardSecurityCode.dirty || creditCardSecurityCode.touched)"
+                                            class="alert alert-danger mt-1">
+                                            <div *ngIf="creditCardSecurityCode.errors.required || creditCardSecurityCode.errors.notOnlyWhitespace">
+                                                SECURITY CODE CANNOT BE EMPTY OR HAVE ONLY WHITESPACE
+                                            </div>
+                                            <div *ngIf="creditCardSecurityCode.errors.pattern">
+                                                INVALID SECURITY CODE FORMAT
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Expiration Month*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="expirationMonth">
+                                            <option *ngFor="let month of creditCardMonths">
+                                                {{ month }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 text-right mt-2"> <label>Expiration Year*</label></div>
+                                <div class="col-md-9">
+                                    <div class="input-space">
+                                        <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+                                            <option *ngFor="let year of creditCardYears">
+                                                {{ year }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Order details -->
+                        <div class="form-area pb-0 mb-0">
+                            <h3>Review Your Order</h3>
+
+                            <h4>Total Quantity: {{ totalQuantity }}</h4>
+                            <h4 class="font-wight-light">Additional Service Charges: FREE</h4>
+                            <h4>Total Price: {{ totalPrice | currency: 'INR' }}</h4>
+                        </div>
+
+                        <!-- submit button-->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">
+                                <span class="fas fa-credit-card mr-2"></span>CONFIRM PURCHASE</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MAIN CONTENT END-->
+
+    </div>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+
+<!--FOOTER START-->
+<app-footer></app-footer>
+<!--FOOTER END-->

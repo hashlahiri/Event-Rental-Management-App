@@ -1,0 +1,116 @@
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="OmDecorators&Dj" class="img-responsive">
+            </a>
+        </div>
+
+        <app-product-category-menu></app-product-category-menu>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+
+                        <app-search></app-search>
+
+                        <app-cart-status></app-cart-status>
+
+                    </div>
+                    <div class="account-wrap"></div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+
+                    <div *ngIf="cartItems.length > 0">
+
+                        <table class="table table-bordered text-center">
+                            <tr>
+                                <th width="20%">Product Image</th>
+                                <th width="50%">Product Detail</th>
+                                <th width="30%">Cart Details</th>
+                            </tr>
+
+                            <tr *ngFor="let tempCartItem of cartItems">
+                                <td>
+                                    <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" />
+                                </td>
+                                <td>
+                                    <button class="btn btn-lg btn-success">{{ tempCartItem.name }}</button>
+                                    <hr />
+                                    <button class="btn btn-outline-secondary font-weight-bold">{{ tempCartItem.unitPrice
+                                        | currency: 'INR' }}</button>
+                                </td>
+                                <td>
+                                    <label class="font-weight-bold">Quantity:</label>
+                                    <br />
+                                    <div class="btn-group btn-group-toggle">
+                                        <label class="btn btn-success">
+                                            <button (click)="incrementQuantity(tempCartItem)"
+                                                class="btn btn-success btn-block">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </label>
+                                        <label class="btn">
+                                            <button class="btn btn-outline-dark btn-block">{{ tempCartItem.quantity
+                                                }}</button>
+                                        </label>
+                                        <label class="btn bg-danger">
+                                            <button (click)="decrementQuantity(tempCartItem)"
+                                                class="btn btn-danger btn-block">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <button (click)="remove(tempCartItem)"
+                                        class="btn btn-dark btn-sm mt-2">Remove</button>
+
+                                    <p class="mt-2 font-weight-bold">Subtotal: {{ tempCartItem.quantity *
+                                        tempCartItem.unitPrice |
+                                        currency: 'INR' }}</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"></td>
+                                <td style="font-weight: bold">
+                                    <p>Total Quantity: {{ totalQuantity }}</p>
+                                    <p>Service Charges: FREE</p>
+                                    <p>Total Price: {{ totalPrice | currency: 'INR' }}</p>
+                                    <button class="btn btn-primary btn-block" routerLink="/checkout">Checkout</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- if cart is empty then display a message -->
+                    <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
+                        Your shopping cart is empty.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT END-->
+
+    </div>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+<app-footer></app-footer>

@@ -1,0 +1,52 @@
+<div class="page-wrapper">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="eventRentalManagement" class="img-responsive" />
+            </a>
+        </div>
+
+        <app-admin-header></app-admin-header>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+    <div class="page-container">
+        <div class="container mt-4">
+            <div class="card text-left" style="color: green; padding: 9px;">
+                <h1 class="display-4">Welcome Mr. Jaiswal</h1>
+                <hr />
+                <h5 class="h5">All Newsletter Offer Requests <button type="button" class="btn btn-secondary" (click) = "onNewsletterReportGenerate()">Generate Newsletter Report</button></h5>
+                <hr />
+                <!--ALL USERS SECTION START-->
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-light text-justified">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col">Date Requested</th>
+                                <th scope="col">Request Status</th>
+                                <th scope="col">Modify Subscription Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor=" let tempNewsletter of newsletterList">
+                                <td scope="row"><b>{{ tempNewsletter.newsletterEmail }}</b></td>
+                                <td scope="row">{{ tempNewsletter.newsletterDateCreated | date:'medium'}}</td>
+                                <td scope="row">{{ tempNewsletter.newsletterRequestStatus }}</td>
+                                <td scope="row">
+                                    <button class="btn btn-sm btn-success mb-1 btn-block" value="{{tempNewsletter}}" (click)="onAccept(tempNewsletter)">ACCEPT</button>
+                                    <button class="btn btn-sm btn-secondary mb-1 btn-block" value="{{tempNewsletter}}" (click)="onHold(tempNewsletter)">HOLD</button>
+                                    <button class="btn btn-sm btn-danger btn-block" value="{{tempNewsletter}}" (click)="onRejected(tempNewsletter)">REJECT</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--ALL ORDERS SECTION END-->
+            </div>
+        </div>
+    </div>
+</div>

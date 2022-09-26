@@ -1,0 +1,243 @@
+<div class="page-wrapper">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="eventRentalManagement" class="img-responsive" />
+            </a>
+        </div>
+
+        <app-admin-header></app-admin-header>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+    <div class="page-container">
+        <div class="container mt-4">
+            <div class="card text-left" style="color: green; padding: 9px;">
+                <h1 class="display-4">Welcome Mr. Jaiswal</h1>
+                <hr />
+
+                <!--ALL REPORTS SECTION START-->
+
+                <h5 class="h5">Generate By: </h5>
+                <hr />
+                <h5 class="h5"><u>Order </u></h5>
+                <hr />
+                <form [formGroup]="orderTrackingNumberFormGroup" #orderTrackingNumberForm = "ngForm" (ngSubmit) = "onOrderTrackingNumberForm(orderTrackingNumberForm.value)">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Order Tracking Number*</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
+                                <input formControlName="orderTrackingNumberFormContent" type="text" name="orderTrackingNumber" class="form-control" id="inlineFormInputGroup"
+                                    placeholder="Order Tracking Number" ngModel required />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">Generate</button>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="orderTrackingNumberFormContent.invalid && (orderTrackingNumberFormContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="orderTrackingNumberFormContent.errors.required">
+                        ORDER TRACKING NUMBER CANNOT BE EMPTY
+                    </div>
+                    <div *ngIf="orderTrackingNumberFormContent.errors.minlength">
+                        ORDER TRACKING NUMBER UNDER MINIMUM LENGTH
+                    </div>
+                    <div *ngIf="orderTrackingNumberFormContent.errors.maxlength">
+                        ORDER TRACKING NUMBER EXCEEDS MAXIMUM LENGTH
+                    </div>
+                </div>
+                <hr />
+                <form [formGroup]="ordersByEmailFormGroup" #ordersByEmailForm = "ngForm" (ngSubmit) = "onOrdersByEmailForm(ordersByEmailForm.value)">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Email*</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
+                                <input formControlName="ordersByEmailFormContent" type="text" class="form-control" id="inlineFormInputGroup" name="customerEmail"
+                                    placeholder="Customer Email" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">Generate</button>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="ordersByEmailFormContent.invalid && (ordersByEmailFormContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByEmailFormContent.errors.required">
+                        EMAIL CANNOT BE EMPTY
+                    </div>
+                    <div *ngIf="ordersByEmailFormContent.errors.minlength">
+                        EMAIL UNDER MINIMUM LENGTH
+                    </div>
+                    <div *ngIf="ordersByEmailFormContent.errors.maxlength">
+                        EMAIL EXCEEDS MAXIMUM LENGTH
+                    </div>
+                    <div *ngIf="ordersByEmailFormContent.errors.pattern">
+                        EMAIL INVALID
+                    </div>
+                </div>
+                <hr />
+                <form [formGroup]="ordersByEmailAndDateRangeFormGroup" #ordersByEmailAndDateRange = "ngForm" (ngSubmit) = "onOrdersByEmailAndDateRange(ordersByEmailAndDateRange.value)">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Customer Email and Date Range</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
+                                <input formControlName="ordersByEmailAndDateRangeFormEmailContent" type="text" class="form-control" id="inlineFormInputGroup"
+                                    placeholder="Email" name="customerEmail" ngModel required>
+                                <input formControlName="ordersByEmailAndDateRangeFormStartContent" type="date" class="form-control" id="inlineFormInputGroup" placeholder="startDate" name="startingDate" ngModel required />
+                                <input formControlName="ordersByEmailAndDateRangeFormEndContent" type="date" class="form-control" id="inlineFormInputGroup" placeholder="endDate" name="endingDate" ngModel required />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">Generate</button>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="ordersByEmailAndDateRangeFormEmailContent.invalid && (ordersByEmailAndDateRangeFormEmailContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByEmailAndDateRangeFormEmailContent.errors.required">
+                        EMAIL CANNOT BE EMPTY
+                    </div>
+                    <div *ngIf="ordersByEmailAndDateRangeFormEmailContent.errors.minlength">
+                        EMAIL UNDER MINIMUM LENGTH
+                    </div>
+                    <div *ngIf="ordersByEmailAndDateRangeFormEmailContent.errors.maxlength">
+                        EMAIL EXCEEDS MAXIMUM LENGTH
+                    </div>
+                    <div *ngIf="ordersByEmailAndDateRangeFormEmailContent.errors.pattern">
+                        EMAIL INVALID
+                    </div>
+                </div>
+                <div *ngIf="ordersByEmailAndDateRangeFormStartContent.invalid && (ordersByEmailAndDateRangeFormStartContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByEmailAndDateRangeFormStartContent.errors.required">
+                        START DATE CANNOT BE EMPTY
+                    </div>
+                </div>
+                <div *ngIf="ordersByEmailAndDateRangeFormEndContent.invalid && (ordersByEmailAndDateRangeFormEndContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByEmailAndDateRangeFormEndContent.errors.required">
+                        END DATE CANNOT BE EMPTY
+                    </div>
+                </div>
+                <hr />
+                <form [formGroup]="ordersByMonthAndYearFormGroup" #ordersByMonthAndYear = "ngForm" (ngSubmit) = "onOrdersByMonthAndYear(ordersByMonthAndYear.value)">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Month And Year</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                </div>
+                                <input formControlName="ordersByMonthAndYearFormMonthContent" type="number" class="form-control" id="inlineFormInputGroup" name="searchMonth"
+                                    placeholder="Month" ngModel required>
+                                <input formControlName="ordersByMonthAndYearFormYearContent" type="year" class="form-control" id="inlineFormInputGroup" name="searchYear"
+                                    placeholder="Year" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">Generate</button>
+                        </div>
+                    </div>
+                </form>
+                <div *ngIf="ordersByMonthAndYearFormMonthContent.invalid && (ordersByMonthAndYearFormMonthContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByMonthAndYearFormMonthContent.errors.required">
+                        MONTH CANNOT BE EMPTY
+                    </div>
+                    <div *ngIf="ordersByMonthAndYearFormMonthContent.errors.min">
+                        MONTH MUST BE MINIMUM 1
+                    </div>
+                    <div *ngIf="ordersByMonthAndYearFormMonthContent.errors.max">
+                        MONTH MUST BE MAXIMUM 12
+                    </div>
+                </div>
+                <div *ngIf="ordersByMonthAndYearFormYearContent.invalid && (ordersByMonthAndYearFormYearContent.dirty)" class="alert alert-danger mt-1">
+                    <div *ngIf="ordersByMonthAndYearFormYearContent.errors.required">
+                        YEAR CANNOT BE EMPTY
+                    </div>
+                    <div *ngIf="ordersByMonthAndYearFormYearContent.errors.minlength || ordersByMonthAndYearFormYearContent.errors.maxlength">
+                        YEAR MUST BE OF 4 DIGITS
+                    </div>
+                </div>
+                <hr />
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Month And Year</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                            </div>
+                            <div class="input-group-text">
+                                Orders from Today
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary mb-2" (click) = "onOrdersForToday()">Generate</button>
+                    </div>
+                </div>
+                <!-- <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Month And Yearrrrrrrrrrrr</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary mb-2" (click) = "onOrdersForToday()">Generate</button>
+                    </div>
+                </div> -->
+            <hr />
+            <!--<h5 class="h5"><u>Newsletter </u></h5>
+            <hr />-->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--ALL REPORTS SECTION END-->
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="eventRentalManagement" class="img-responsive" />
+            </a>
+        </div>
+
+        <app-admin-header></app-admin-header>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+    <div class="page-container">
+        <div class="container mt-4">
+            <div class="card text-left" style="color: green; padding: 9px;">
+                <h1 class="display-4">Welcome Mr. Jaiswal</h1>
+                <hr />
+                <h5 class="h5">All Viewer Contacts Requests <button type="button" class="btn btn-secondary" (click) = "onViewerContactReportGenerate()">Generate Contact Request Report</button></h5>
+                <hr />
+                <!--ALL USERS SECTION START-->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-light text-justified">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Message</th>
+                                <th scope="col">Request Status</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Modify Request Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor=" let tempViewerRequest of viewerRequestList">
+                                <td scope="row" class="font-weight-bold">{{ tempViewerRequest.contactUsEmail }}</td>
+                                <td scope="row">{{ tempViewerRequest.contactUsPurpose }}</td>
+                                <td scope="row">{{ tempViewerRequest.contactUsMessage }}</td>
+                                <td scope="row">{{ tempViewerRequest.contactUsRequestStatus }}</td>
+                                <td scope="row">{{ tempViewerRequest.contactUsCreated | date: "medium" }}</td>
+                                <td scope="row">
+                                    <button class="btn btn-sm btn-success mb-1 btn-block" value="{{tempViewerRequest}}" (click)="onAccept(tempViewerRequest)">ACCEPT</button>
+                                    <button class="btn btn-sm btn-secondary mb-1 btn-block" value="{{tempViewerRequest}}" (click)="onHold(tempViewerRequest)">HOLD</button>
+                                    <button class="btn btn-sm btn-danger btn-block" value="{{tempViewerRequest}}" (click)="onRejected(tempViewerRequest)">REJECT</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--ALL ORDERS SECTION END-->
+            </div>
+        </div>
+    </div>
+</div>

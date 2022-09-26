@@ -1,0 +1,117 @@
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com" role="button"><i
+          class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com" role="button"><i
+          class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://google.com" role="button"><i
+          class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://instagram.com" role="button"><i
+          class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.co.in" role="button"><i
+          class="fab fa-linkedin-in"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form [formGroup]="newsletterFormGroup" #newsletterRequestEmail = "ngForm" (ngSubmit) = "onSubmit(newsletterRequestEmail.value)">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Help us reach you about exciting offers</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div formGroupName="newsletter" class="form-outline form-white mb-4">
+              <input formControlName="newsletterEmailContent" type="text" name="newsletterEmail" id="form5Example21"
+                class="form-control" placeholder="Enter your email address" ngModel required/>
+                
+                <div *ngIf="newsletterEmailContent.invalid && (newsletterEmailContent.dirty || newsletterEmailContent.touched)" class="alert alert-danger mt-1">
+                  <div *ngIf="newsletterEmailContent.errors.required">
+                    EMAIL CANNOT BE EMPTY
+                  </div>
+                  <div *ngIf="newsletterEmailContent.errors.minlength">
+                    EMAIL BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="newsletterEmailContent.errors.maxlength">
+                    EMAIL ABOVE MAXIMUM LENGTH
+                  </div>
+                  <div *ngIf="newsletterEmailContent.errors.pattern">
+                    EMAIL INVALID FORMAT
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <input type="submit" class="btn btn-outline-light mb-4" value="GET OFFERS" />
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-0 mb-md-0">
+          <h5 class="btn text-uppercase text-light" routerLink="/home">Home</h5>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-0 mb-md-0">
+          <h5 class="btn text-uppercase text-light" routerLink="/careers">Careers</h5>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-0 mb-md-0">
+          <h5 class="btn text-uppercase text-light" routerLink="/ourPolicy">Policies</h5>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-0 mb-md-0">
+          <h5 class="btn text-uppercase text-light" routerLink="/contactUs">Contact Us</h5>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright: OM DECORATORS & DJ PVT. LTD.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

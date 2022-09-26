@@ -1,0 +1,142 @@
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="packages" class="img-responsive">
+            </a>
+        </div>
+
+        <app-product-category-menu></app-product-category-menu>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <app-user-header></app-user-header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="row">
+
+                                    <!-- loop over the collection of products -->
+                                    <div *ngFor="let tempProduct of products" class="col-md-3">
+
+                                        <!--New box start-->
+                                        <div class="height d-flex justify-content-center align-items-center">
+
+                                            <div class="card p-3">
+
+                                                <div class="d-block justify-content-between align-items-center">
+                                                    <div class="mt-1">
+                                                        <h5 class="text-uppercase" style="font-size: 18px;">
+                                                            <a routerLink="/products/{{ tempProduct.productId }}">
+                                                                {{ tempProduct.name }}
+                                                            </a>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="image">
+                                                        <a routerLink="/products/{{ tempProduct.productId }}">
+                                                            <img src="{{ tempProduct.imageUrl }}" class="img-responsive"
+                                                                width="100%">
+                                                        </a>
+                                                    </div>
+                                                    <p>{{ (tempProduct.description | slice:0:100) + '...' }}</p>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline-dark d-block">
+                                                    <b>{{tempProduct.unitPrice | currency:'INR'}}</b>
+                                                </button>
+                                                <button (click)="addToCart(tempProduct)"
+                                                    class="btn btn-success btn-block">Add To Cart</button>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <!--new box end-->
+
+                                        <!--default produces start-->
+                                        <!--
+                            <div class="product-box pr-3 bg-light">
+                                <a routerLink="/products/{{ tempProduct.productId }}">
+                                    <img src="{{ tempProduct.imageUrl }}" class="img-responsive align-right">
+                                </a>
+                                <a routerLink="/products/{{ tempProduct.productId }}">
+                                    <h1>{{ tempProduct.name }}</h1>
+                                </a>
+                                <div class="price text-dark display-4">
+                                    {{ tempProduct.unitPrice | currency:'INR' }} 
+                                    <button (click)="addToCart(tempProduct)" class="btn btn-success btn-block">Add to
+                                    cart</button>
+                                </div>
+                            </div>
+                            -->
+                                        <!--default produces end-->
+                                    </div>
+
+                                    <!-- if products empty then display a message-->
+                                    <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12"
+                                        role="alert">
+                                        No products found.
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- begin footer -->
+                    <div class="footer-pagination">
+                        <div class="row">
+                            <div class="col-md-6"></div>
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-9" style="padding-left: 30%">
+
+                                        <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize"
+                                            [collectionSize]="theTotalElements" [maxSize]="5" [boundaryLinks]="true"
+                                            (pageChange)="listProducts()">
+
+                                        </ngb-pagination>
+
+                                    </div>
+
+                                    <div class="col-md-3 mt-2" style="text-align: right;">
+                                        <span class="mr-2">Page Size</span>
+
+                                        <select (change)="updatePageSize($event.target.value)">
+                                            <option>2</option>
+                                            <option selected="true">4</option>
+                                            <option>8</option>
+                                            <option>12</option>
+                                            <option>16</option>
+                                            <option>20</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end footer -->
+
+                </div>
+            </div>
+        </div>
+        <!-- MAIN CONTENT END-->
+
+    </div>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+
+<!--FOOTER START-->
+<app-footer></app-footer>
+<!--FOOTER END-->

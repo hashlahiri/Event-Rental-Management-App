@@ -1,0 +1,174 @@
+<app-header></app-header>
+<div class="container mt-5">
+   <div class="card text-center p-5 bg-light">
+      <!--REGISTRATION FORM BEGINS-->
+      <div class="registration-form">
+         <form [formGroup]="registrationFormGroup" #registrationFormData="ngForm"
+            (ngSubmit)="onSubmit(registrationFormData.value)">
+            <div class="form-icon">
+               <span>
+                  <i class="fa fa-user-circle"></i>
+               </span>
+            </div>
+            <h1>Register HERE</h1>
+            <hr />
+            <div class="form-group">
+               <input formControlName="userName" type="text" class="form-control item" id="username"
+                  placeholder="UserName" name="userName" ngModel>
+               <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger mt-1">
+                  <div *ngIf="userName.errors.required || userName.errors.notOnlyWhitespace">
+                     USERNAME CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userName.errors.minlength">
+                     USERNAME BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userName.errors.maxlength">
+                     USERNAME ABOVE MAXIMUM LENGTH
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userFirstName" type="text" class="form-control item" id="firstName"
+                  placeholder="First name" name="userFirstName" ngModel>
+               <div *ngIf="userFirstName.invalid && (userFirstName.dirty || userFirstName.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userFirstName.errors.required || userFirstName.errors.notOnlyWhitespace">
+                     FIRSTNAME CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userFirstName.errors.minlength">
+                     FIRSTNAME BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userFirstName.errors.maxlength">
+                     FIRSTNAME ABOVE MAXIMUM LENGTH
+                  </div>
+                  <div *ngIf="userFirstName.errors.pattern">
+                     INVALID FIRSTNAME FORMAT
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userLastName" type="text" class="form-control item" id="lastName"
+                  placeholder="Last name" name="userLastName" ngModel>
+               <div *ngIf="userLastName.invalid && (userLastName.dirty || userLastName.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userLastName.errors.required || userLastName.errors.notOnlyWhitespace">
+                     LASTNAME CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userLastName.errors.minlength">
+                     LASTNAME BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userLastName.errors.maxlength">
+                     LASTNAME ABOVE MAXIMUM LENGTH
+                  </div>
+                  <div *ngIf="userLastName.errors.pattern">
+                     INVALID LASTNAME FORMAT
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userPassword" type="password" class="form-control item" id="password"
+                  placeholder="Password" name="userPassword" ngModel>
+               <div *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userPassword.errors.required || userPassword.errors.notOnlyWhitespace">
+                     PASSWORD CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userPassword.errors.minlength">
+                     PASSWORD BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userPassword.errors.maxlength">
+                     PASSWORD ABOVE MAXIMUM LENGTH
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userEmail" type="email" class="form-control item" id="email" placeholder="Email"
+                  name="userEmail" ngModel>
+               <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)" class="alert alert-danger mt-1">
+                  <div *ngIf="userEmail.errors.required || userEmail.errors.notOnlyWhitespace">
+                     EMAIL CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userEmail.errors.minlength">
+                     EMAIL BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userEmail.errors.maxlength">
+                     EMAIL ABOVE MAXIMUM LENGTH
+                  </div>
+                  <div *ngIf="userEmail.errors.pattern">
+                     INVALID EMAIL FORMAT
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userPhoneNumber" type="text" class="form-control item" id="phone-number"
+                  placeholder="Phone Number" name="userPhoneNumber" ngModel>
+               <div *ngIf="userPhoneNumber.invalid && (userPhoneNumber.dirty || userPhoneNumber.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userPhoneNumber.errors.required || userPhoneNumber.errors.notOnlyWhiteSpace">
+                     NUMBER CANNOT BE EMPTY OR ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userPhoneNumber.errors.minlength || userPhoneNumber.errors.maxlength">
+                     INVALID NUMBER FORMAT
+                  </div>
+                  <div *ngIf="userPhoneNumber.errors.pattern">
+                     INVALID NUMBER FORMAT
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input formControlName="userAddress" type="text" class="form-control item" id="address"
+                  placeholder="Address" name="userAddress" ngModel>
+               <div *ngIf="userAddress.invalid && (userAddress.dirty || userAddress.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userAddress.errors.required || userAddress.errors.notOnlyWhiteSpace">
+                     ADDRESS CANNOT BE EMPTY OR ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userAddress.errors.minlength">
+                     ADDRESS BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userAddress.errors.maxlength">
+                     ADDRESS ABOVE MAXIMUM LENGTH
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <small class="form-text text-muted mt-0 pt-0">Date of Birth*</small>
+               <input formControlName="userDob" type="date" class="form-control item" id="birth-date"
+                  placeholder="Birth Date" name="userDob" ngModel>
+               <div *ngIf="userDob.invalid && (userDob.dirty || userDob.touched)" class="alert alert-danger mt-1">
+                  <div *ngIf="userDob.errors.required || userDob.errors.notOnlyWhiteSpace">
+                     Date of Birth of user cannot be empty
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <small class="form-text text-muted mt-0 pt-0">This pin would be used in account recovery purposes</small>
+               <input formControlName="userSecretPin" type="text" class="form-control item" id="secret-pin"
+                  placeholder="Secret Pin" name="userSecretPin" ngModel>
+               <div *ngIf="userSecretPin.invalid && (userSecretPin.dirty || userSecretPin.touched)"
+                  class="alert alert-danger mt-1">
+                  <div *ngIf="userSecretPin.errors.required || userSecretPin.errors.notOnlyWhiteSpace">
+                     PIN CANNOT HAVE ONLY WHITESPACE
+                  </div>
+                  <div *ngIf="userSecretPin.errors.minlength">
+                     PIN BELOW MINIMUM LENGTH
+                  </div>
+                  <div *ngIf="userSecretPin.errors.maxlength">
+                     PIN ABOVE MAXIMUM LENGTH
+                  </div>
+                  <div *ngIf="userSecretPin.errors.pattern">
+                     INVALID PIN FORMAT
+                  </div>
+               </div>
+            </div>
+            <div class="form-group">
+               <input type="submit" class="btn btn-block create-account" value="Create Account" />
+            </div>
+         </form>
+      </div>
+      <h5>Already have an account?</h5>
+      <button type="button" class="btn btn-md btn-secondary" routerLink="/login">LOGIN NOW</button>
+   </div>
+   <!--REGISTRATION FORM ENDS-->
+
+</div>

@@ -1,0 +1,58 @@
+<div class="page-wrapper">
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a routerLink="/products">
+                <img src="assets/images/logo.png" alt="omDecoratorsAndDj" class="img-responsive">
+            </a>
+        </div>
+
+        <app-product-category-menu></app-product-category-menu>
+
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <app-user-header></app-user-header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="detail-section pt-5">
+            <div class="pl-5 pt-5 container container-fluid bg-light">
+                <table class="table">
+                    <tr>
+                        <td style="width: 49%;">
+                            <img src="{{ product.imageUrl }}" class="detail-img">
+                        </td>
+                        <td>
+                            <p class="display-4">{{ product.name }}</p>
+                            <div class="price">{{ product.unitPrice | currency:'INR' }} only/-</div>
+                            <hr />
+                            <h4>Description</h4>
+                            <p>{{ product.description }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button (click)="addToCart()" class="btn btn-block btn-success">Add to cart</button>
+                            <hr />
+                            <button routerLink="/products" class="btn btn-outline-primary">Back to Packages</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- MAIN CONTENT END-->
+
+    </div>
+</div>
+
+<!-- ENDS PAGE CONTAINER -->
+
+<!--FOOTER START-->
+<app-footer></app-footer>
+<!--FOOTER END-->
