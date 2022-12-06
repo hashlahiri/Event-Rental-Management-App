@@ -1,0 +1,1617 @@
+{
+	"info": {
+		"_postman_id": "d5b53146-6902-44d6-a0f6-c3ef01d092d2",
+		"name": "Event Manage Ecom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19075691"
+	},
+	"item": [
+		{
+			"name": "Oauth2 Token",
+			"item": [
+				{
+					"name": "Authenticate GENERATE TOKEN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"admin\",\r\n    \"userPassword\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserInfo Controller",
+			"item": [
+				{
+					"name": "Insert New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"vedanshooKadam\",\r\n    \"userFirstName\" : \"Vedanshoo\",\r\n    \"userLastName\" : \"Kadam\",\r\n    \"userPassword\" : \"password\",\r\n    \"userEmail\" : \"ved@gmail.com\",\r\n    \"userPhoneNumber\" : \"7030631963\",\r\n    \"userAddress\" : \"P74, Hadgaon Road, Nanded 411041\",\r\n    \"userDob\" : \"2000/10/02\",\r\n    \"userSecretPin\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/user/insertNewUser/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"insertNewUser",
+								""
+							]
+						},
+						"description": "V2 API"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/getByUsername/?username=harryLahiri",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"getByUsername",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "harryLahiri"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/getAllUsers/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"getAllUsers",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/getUserByEmail/?userEmail=admin@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"getUserByEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "userEmail",
+									"value": "admin@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password (password reset)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\" : \"chanakya@gmail.com\",\r\n    \"userSecretPin\" : \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/user/forgotPassword/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"forgotPassword",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\" : \"harry@gmail.com\",\r\n    \"userFirstName\" : \"Harry\",\r\n    \"userLastName\" : \"Lahiri\",\r\n    \"userPassword\" : \"password\",\r\n    \"userPhoneNumber\" : \"9330689787\",\r\n    \"userAddress\" : \"P76 Barada Avenue Garia Kolkata 700084\",\r\n    \"userDob\" : \"27/06/1994\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/user/updateProfile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"updateProfile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User API",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/deleteProfile/?userEmail=harry@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"deleteProfile",
+								""
+							],
+							"query": [
+								{
+									"key": "userEmail",
+									"value": "harry@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles Controller",
+			"item": [
+				{
+					"name": "Insert New Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\" : \"\",\r\n    \"roleDescription\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/createNewRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"createNewRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Controller",
+			"item": [
+				{
+					"name": "Find Product By Category Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJyeUxhaGlyaSIsImV4cCI6MTY2Mjg0NDMwMywiaWF0IjoxNjYyODI2MzAzfQ.RW8t5urhZmNVF-crbDTDNUX66QUd9FmxoY09Jbm0FaXRXwdMkl74nwaQWvBHLoJ6f-NtNDnVjMFuPNN6r_TwYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/products/search/findByCategoryId?id=1&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"products",
+								"search",
+								"findByCategoryId"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Details By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJyeUxhaGlyaSIsImV4cCI6MTY2Mjg0NDMwMywiaWF0IjoxNjYyODI2MzAzfQ.RW8t5urhZmNVF-crbDTDNUX66QUd9FmxoY09Jbm0FaXRXwdMkl74nwaQWvBHLoJ6f-NtNDnVjMFuPNN6r_TwYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Name Containing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoYXJyeUxhaGlyaSIsImV4cCI6MTY2Mjg0NDMwMywiaWF0IjoxNjYyODI2MzAzfQ.RW8t5urhZmNVF-crbDTDNUX66QUd9FmxoY09Jbm0FaXRXwdMkl74nwaQWvBHLoJ6f-NtNDnVjMFuPNN6r_TwYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/products/search/findByNameContaining?name=bachelors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"products",
+								"search",
+								"findByNameContaining"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "bachelors"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productCategoryId\" : {\r\n        \"productCategoryId\" : \"5\",\r\n        \"categoryName\" : \"Funeral Event\"\r\n    },\r\n    \"sku\" : \"12\",\r\n    \"name\" : \"Funeral Pack (10Day)\",\r\n    \"description\" : \"Ten day Funeral arrangements pack with white clothes and ashan and chitra katha reading seminars with purahit Gita paath followed by remembrance and full scaled framed picture in memory of your loved one.\",\r\n    \"unitPrice\" : \"35000\",\r\n    \"imageUrl\" : \"assets/images/products/funeralEvent/funeralEvent.jpg\",\r\n    \"active\" : true,\r\n    \"unitsInStock\" : \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/products/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"products",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Category Controller",
+			"item": [
+				{
+					"name": "Add Product Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"Marriage Event\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/addProductCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"addProductCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Product Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/product-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"product-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country Controller",
+			"item": [
+				{
+					"name": "Get All Countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/countries/getAllCountries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"countries",
+								"getAllCountries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "State Controller",
+			"item": [
+				{
+					"name": "Get all states by country id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/states/search/findByCountryCode?code=IN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"states",
+								"search",
+								"findByCountryCode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "IN"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Controller",
+			"item": [
+				{
+					"name": "find Order By Customer Email Paged",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/search/findOrderByCustomerEmail?email=harry@gmail.com&page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"search",
+								"findOrderByCustomerEmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "harry@gmail.com"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find Order By Email List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getCustomerOrders/list/?username=harryLahiri",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getCustomerOrders",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "harryLahiri"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getAllOrders/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getAllOrders",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customer Orders Download CSV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getAllUserOrdersCSVDownload/list/?username=harryLahiri",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getAllUserOrdersCSVDownload",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "harryLahiri"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customer Orders ADMIN Download CSV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getAllOrdersCSVDownload/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getAllOrdersCSVDownload",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order RequestStatus by OrderTrackingNumber",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/updateStatusByOrderTrackingNumber/?orderTrackingNumber=9987657d-14ee-4e47-98fb-6cf4b6532cd2&requestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"updateStatusByOrderTrackingNumber",
+								""
+							],
+							"query": [
+								{
+									"key": "orderTrackingNumber",
+									"value": "9987657d-14ee-4e47-98fb-6cf4b6532cd2"
+								},
+								{
+									"key": "requestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get OrderInfo by order tracking number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getOrderInfoByOrderTrackingNumber/?orderTrackingNumber=9987657d-14ee-4e47-98fb-6cf4b6532cd2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getOrderInfoByOrderTrackingNumber",
+								""
+							],
+							"query": [
+								{
+									"key": "orderTrackingNumber",
+									"value": "9987657d-14ee-4e47-98fb-6cf4b6532cd2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by date range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getOrderByDateRangeAndEmail/?customerEmail=harry@gmail.com&startDate=2022-07-20&endDate=2022-07-25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getOrderByDateRangeAndEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "customerEmail",
+									"value": "harry@gmail.com"
+								},
+								{
+									"key": "startDate",
+									"value": "2022-07-20"
+								},
+								{
+									"key": "endDate",
+									"value": "2022-07-25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer Orders by customerEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getCustomerOrdersByCustomerEmail/?customerEmail=harry@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getCustomerOrdersByCustomerEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "customerEmail",
+									"value": "harry@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Orders By Month And Year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getOrdersByMonthAndYear/?month=7&year=2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getOrdersByMonthAndYear",
+								""
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "7"
+								},
+								{
+									"key": "year",
+									"value": "2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders From Today",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getOrdersFromToday/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getOrdersFromToday",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getAllOrdersByStatus/?status=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getAllOrdersByStatus",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders by price range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/orders/getAllOrdersByPriceRange/?startPrice=10000&endPrice=13000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"orders",
+								"getAllOrdersByPriceRange",
+								""
+							],
+							"query": [
+								{
+									"key": "startPrice",
+									"value": "10000"
+								},
+								{
+									"key": "endPrice",
+									"value": "13000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Newsletter Controller",
+			"item": [
+				{
+					"name": "Insert newsletter by email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/insertNewsletter/?newsletterEmail=hikyoffee@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"insertNewsletter",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "hikyoffee@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletter/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletter",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletter/page/?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletter",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get newsletter by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getNewsletterById/?newsletterId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getNewsletterById",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletterByEmail/list/?newsletterEmail=chanakyalahiri@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletterByEmail",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "chanakyalahiri@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter by email paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletterByEmail/page/?newsletterEmail=hikyoffee@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletterByEmail",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "hikyoffee@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter by request status list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletterByRequestStatus/list/?newsletterRequestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletterByRequestStatus",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterRequestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter by request status paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllNewsletterByRequestStatus/page/?newsletterRequestStatus=PENDING&page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllNewsletterByRequestStatus",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterRequestStatus",
+									"value": "PENDING"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter with email and requestStatus list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllByNewsletterEmailAndRequestStatus/list/?newsletterEmail=hikyoffee@gmail.com&newsletterRequestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllByNewsletterEmailAndRequestStatus",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "hikyoffee@gmail.com"
+								},
+								{
+									"key": "newsletterRequestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all newsletter with email and request status paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/getAllByNewsletterEmailAndRequestStatus/page/?newsletterEmail=hikyoffee@gmail.com&newsletterRequestStatus=PENDING&page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"getAllByNewsletterEmailAndRequestStatus",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "hikyoffee@gmail.com"
+								},
+								{
+									"key": "newsletterRequestStatus",
+									"value": "PENDING"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Newsletter by id and request status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/updateNewsletterById/?newsletterId=9&newsletterRequestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"updateNewsletterById",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterId",
+									"value": "9"
+								},
+								{
+									"key": "newsletterRequestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Newsletters by newsletter Email",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/newsletter/updateNewsletterByEmail/?newsletterEmail=chanakya@gmail.com&requestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"newsletter",
+								"updateNewsletterByEmail",
+								""
+							],
+							"query": [
+								{
+									"key": "newsletterEmail",
+									"value": "chanakya@gmail.com"
+								},
+								{
+									"key": "requestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ContactAdmin Controller",
+			"item": [
+				{
+					"name": "Get all contact admin list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactAdmin/getAllContactAdmin/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactAdmin",
+								"getAllContactAdmin",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all contact admin page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactAdmin/getAllContactAdmin/page/?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactAdmin",
+								"getAllContactAdmin",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert into Contact Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contactAdminName\" : \"Harry Lahiri\",\r\n    \"contactAdminEmail\" : \"harry@gmail.com\",\r\n    \"contactAdminPurpose\" : \"Enquiry\",\r\n    \"contactAdminMessage\" : \"This is an enquiry email about your company and its discounts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/contactAdmin/insertIntoContactAdmin/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactAdmin",
+								"insertIntoContactAdmin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact Admin By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactAdmin/getContactAdminById/?contactAdminId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactAdmin",
+								"getContactAdminById",
+								""
+							],
+							"query": [
+								{
+									"key": "contactAdminId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Admin By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactAdmin/updateContactAdminRequestStatusById/?contactAdminId=1&contactAdminRequestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactAdmin",
+								"updateContactAdminRequestStatusById",
+								""
+							],
+							"query": [
+								{
+									"key": "contactAdminId",
+									"value": "1"
+								},
+								{
+									"key": "contactAdminRequestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ContactUs Controller",
+			"item": [
+				{
+					"name": "Get all contact us list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactUs/getAllContactUs/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactUs",
+								"getAllContactUs",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all contact us page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactUs/getAllContactUs/page/?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactUs",
+								"getAllContactUs",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert into Contact Us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contactUsName\" : \"Chanakya Lahiri\",\r\n    \"contactUsEmail\" : \"chanakya@gmail.com\",\r\n    \"contactUsPurpose\" : \"Enquiry\",\r\n    \"contactUsMessage\" : \"This is an enquiry email about your company and its discounts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/contactUs/insertIntoContactUs/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactUs",
+								"insertIntoContactUs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contact us by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactUs/getContactUsById/?contactUsId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactUs",
+								"getContactUsById",
+								""
+							],
+							"query": [
+								{
+									"key": "contactUsId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Us Request Status By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/contactUs/updateContactUsRequestStatusById/?contactUsId=1&contactUsRequestStatus=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"contactUs",
+								"updateContactUsRequestStatusById",
+								""
+							],
+							"query": [
+								{
+									"key": "contactUsId",
+									"value": "1"
+								},
+								{
+									"key": "contactUsRequestStatus",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "0198a0e2-bd33-4c59-9329-0cb7c7180f6f",
+		"name": "AngularSpringBootEcomProject",
+		"description": "This folder includes all the APIs related to SpringBoot and MySQL as the backend and Angular CLI as the frontend. This is responsible for the api testing for all the current api's in the project, to keep track and expand project further.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19075691"
+	},
+	"item": [
+		{
+			"name": "Checkout Controller",
+			"item": [
+				{
+					"name": "Checkout Purchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customer\":{\r\n      \"firstName\":\"Harry\",\r\n      \"lastName\":\"Lahiri\",\r\n      \"email\":\"dmc1922020@zealeducation.com\"\r\n   },\r\n   \"shippingAddress\":{\r\n      \"street\":\"P934BaradaAvenue\",\r\n      \"city\":\"Kolkata\",\r\n      \"state\":\"Bengal\",\r\n      \"country\":\"India\",\r\n      \"zipCode\":\"700084\"\r\n   },\r\n   \"billingAddress\":{\r\n      \"street\":\"P76BaradaAvenue\",\r\n      \"city\":\"Kolkata\",\r\n      \"state\":\"Bengal\",\r\n      \"country\":\"India\",\r\n      \"zipCode\":\"700084\"\r\n   },\r\n   \"order\":{\r\n      \"totalPrice\":36.98,\r\n      \"totalQuantity\":2\r\n   },\r\n   \"orderItems\":[\r\n      {\r\n         \"imageUrl\":\"assets/images/products/coffeemugs/coffeemug-luv2code-1000.png\",\r\n         \"quantity\":1,\r\n         \"unitPrice\":18.99,\r\n         \"productId\":26\r\n      },\r\n      {\r\n         \"imageUrl\":\"assets/images/products/mousepads/mousepad-luv2code-1000.png\",\r\n         \"quantity\":1,\r\n         \"unitPrice\":17.99,\r\n         \"productId\":51\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/checkout/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"checkout",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderHistory Controller",
+			"item": [
+				{
+					"name": "Find orders by Customer Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/orders/search/findByCustomerEmail?email=hikyoffee@gmail.com&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"orders",
+								"search",
+								"findByCustomerEmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "hikyoffee@gmail.com"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
